@@ -1,0 +1,29 @@
+- name: Atualizar cache e pacotes
+  apt:
+    update_cache: yes
+    upgrade: dist
+  tags: always
+
+- name: Instalar pacotes basicos (loop)
+  apt:
+    name: "{{ item }}"
+    state: present
+  loop: "{{ pacotes_basicos }}"
+
+- name: Instalar Apache
+  apt:
+    name: apache2
+    state: present
+
+- name: Criar usuário devops
+  user:
+    name: "{{ usuario_dev }}"
+    password: "{{ senha_dev | password_hash('sha512') }}"
+    state: present
+    shell: /bin/bash
+
+- name: Publicar página inicial via template
+  template:
+    src: index.html.j2
+    dest: /var/www/html/index.html
+  notify: restart apache
