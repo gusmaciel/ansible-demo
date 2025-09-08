@@ -1,4 +1,3 @@
-````markdown
 # 🛠️ Demonstração Guiada com Ansible + Role `webserver`
 
 > **Objetivo:** montar e executar um playbook Ansible com a role `webserver`, que:
@@ -20,7 +19,6 @@ cd ~/aulas/ansible-demo
 vagrant init debian/bullseye64   # ou outra box Debian
 vagrant up
 ````
-
 Depois, pegue as informações necessárias:
 
 ```bash
