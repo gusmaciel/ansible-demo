@@ -16,7 +16,7 @@ Se a VM ainda não estiver ativa, em outro terminal:
 
 ```bash
 cd ~/aulas/ansible-demo
-vagrant init debian/bullseye64   # ou outra box Debian
+vagrant init generic/debian12   # ou outra box Debian
 vagrant up
 ````
 Depois, pegue as informações necessárias:
@@ -58,6 +58,7 @@ Crie o arquivo `ansible-demo/inventory` com o conteúdo:
 > ⚠️ No Windows, use o caminho completo da chave gerada pelo Vagrant, por exemplo:
 > `C:\\Users\\SeuUsuario\\caminho\\ate\\.vagrant\\machines\\default\\virtualbox\\private_key`
 
+> ATENÇÃO: Mesmo assim, caso o Ansible não encontre a chave privada, será necessário criar em algum lugar dentro da VM do Ansible que consiga dar as permissões 400 (r--------), para que seja possível a utilização
 ---
 
 ## ⚙️ 4. `ansible.cfg` (opcional, mas recomendado)
