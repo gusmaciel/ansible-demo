@@ -11,8 +11,8 @@ Vagrant.configure("2") do |config|
   # Porta 80 http guest encaminhada para 8080 no host
   config.vm.network "forwarded_port", guest: 80, host: 8080
   
-  # Provisionamento com shell script
-  #config.vm.provision "shell", inline: <<-SHELL
-   
-  #SHELL
+  # Provisionamento com Ansible
+  #config.vm.provision "ansible_local" do |ansible|
+  #  ansible.playbook = "C:/Users/Aluno/Desktop/aulas/ansible-demo/playbook.yml"
+  #end
 end
