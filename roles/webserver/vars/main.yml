@@ -2,6 +2,7 @@ pacotes_basicos:
   - htop
   - tree
   - unzip
+  - sudo
 
 usuario_dev: devops
 senha_dev: "Senai@123"   # só para demo; em produção usar Vault / safer storage

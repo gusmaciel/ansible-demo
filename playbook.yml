@@ -1,5 +1,7 @@
 - name: Provisionar webserver (role webserver)
   hosts: web
   become: true
+  environment:
+    DEBIAN_FRONTEND: noninteractive
   roles:
     - webserver
